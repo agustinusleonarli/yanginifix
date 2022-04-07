@@ -15,6 +15,11 @@ class CreateDosensTable extends Migration
     {
         Schema::create('dosens', function (Blueprint $table) {
             $table->id();
+            $table->string('dosen_nama');
+            $table->double('dosen_notelp');
+            $table->string('dosen_alamat');
+            $table->string('dosen_deskripsi');
+            $table->string('image');
             $table->timestamps();
         });
     }

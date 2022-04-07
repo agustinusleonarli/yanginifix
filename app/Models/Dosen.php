@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Dosen extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    
+    public function getImageAttribute($image)
+    {
+        return asset('storage/photos/' . $image);
+    }
+
 }

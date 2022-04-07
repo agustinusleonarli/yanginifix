@@ -80,8 +80,8 @@
                             "><i class="fas fa-file-alt"></i>
                             <span>Kurikulum</span></a></li>
                         @endcan
-                        @can('posts.index')
-                                <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.post.index') }}
+                        @can('dosens.index')
+                                <li class="{{ setActive('admin/dosen') }}"><a class="nav-link" href="{{ route('admin.dosen.index') }}
                             "><i class="fas fa-chalkboard-teacher"></i>
                             <span>Dosen</span></a></li>
                         @endcan

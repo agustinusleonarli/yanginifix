@@ -80,5 +80,11 @@ class PermissionsTableSeeder extends Seeder
          Permission::create(['name' => 'kurikulums.create']);
          Permission::create(['name' => 'kurikulums.edit']);
          Permission::create(['name' => 'kurikulums.delete']);
+
+         //permission for dosen
+         Permission::create(['name' => 'dosens.index']);
+         Permission::create(['name' => 'dosens.create']);
+         Permission::create(['name' => 'dosens.edit']);
+         Permission::create(['name' => 'dosens.delete']);
     }
 }

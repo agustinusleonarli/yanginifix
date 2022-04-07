@@ -59,6 +59,9 @@ Route::prefix('admin')->group(function () {
 
         // Kurikulum
         Route::resource('/kurikulum', App\Http\Controllers\Admin\KurikulumController::class, ['except' => 'show' ,'as' => 'admin']);
+
+         // Dosen
+         Route::resource('/dosen', App\Http\Controllers\Admin\DosenController::class, ['except' => 'show' ,'as' => 'admin']);
     });
 
 });
