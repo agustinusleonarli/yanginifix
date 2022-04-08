@@ -4,52 +4,50 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Tambah Agenda</h1>
+                <h1>Tambah Fasilitas</h1>
             </div>
 
             <div class="section-body">
 
                 <div class="card">
                     <div class="card-header">
-                        <h4><i class="fas fa-bell"></i> Tambah Agenda</h4>
+                        <h4><i class="fas fa-bell"></i> Tambah Fasilitas</h4>
                     </div>
 
                     <div class="card-body">
-                        <form action="{{ route('admin.visimisi.store') }}" method="POST">
+                        <form action="{{ route('admin.sarana.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
-                             <div class="mb-3">
-                                <label>Kata Sambutan</label>
-                                {{-- <input type="text" name="katasambutan" value="{{ old('katasambutan') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('katasambutan') is-invalid @enderror"> --}}
-                                <textarea class="form-control" rows="2" type="text" name="katasambutan" value="{{ old('katasambutan') }}" placeholder="Masukkan Kata Sambutan" class="form-control @error('katasambutan') is-invalid @enderror"></textarea>   
-                                @error('katasambutan')
+                             <div class="form-group">
+                                <label>Nama Fasilitas</label>
+                                <input type="text" name="nama_sarana" value="{{ old('nama_sarana') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('nama_sarana') is-invalid @enderror">
+
+                                @error('nama_sarana')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Visi</label>
-                                <input type="text" name="visi" value="{{ old('visi') }}" placeholder="Masukkan Visi" class="form-control @error('visi') is-invalid @enderror">
+                                <label>Deskripsi Fasilitas</label>
+                                <input type="text" name="desc_sarana" value="{{ old('desc_sarana') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('desc_sarana') is-invalid @enderror">
 
-                                @error('visi')
+                                @error('desc_sarana')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div> 
                             <div class="form-group">
-                                <label>Misi</label>
-                                <input type="text" name="misi" value="{{ old('misi') }}" placeholder="Masukkan Misi" class="form-control @error('misi') is-invalid @enderror">
+                                <label>GAMBAR</label>
+                                <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
 
-                                @error('misi')
+                                @error('image')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
-
-
                             <button class="btn btn-primary mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> SIMPAN</button>
                             <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i> RESET</button>
 

@@ -62,6 +62,9 @@ Route::prefix('admin')->group(function () {
 
          // Dosen
          Route::resource('/dosen', App\Http\Controllers\Admin\DosenController::class, ['except' => 'show' ,'as' => 'admin']);
+
+         //Fasilitas
+         Route::resource('/sarana', App\Http\Controllers\Admin\SaranaController::class, ['except' => 'show' ,'as' => 'admin']);
     });
 
 });

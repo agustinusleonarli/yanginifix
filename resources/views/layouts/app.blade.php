@@ -85,8 +85,8 @@
                             "><i class="fas fa-chalkboard-teacher"></i>
                             <span>Dosen</span></a></li>
                         @endcan
-                        @can('posts.index')
-                                <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.post.index') }}
+                        @can('saranas.index')
+                                <li class="{{ setActive('admin/sarana') }}"><a class="nav-link" href="{{ route('admin.sarana.index') }}
                             "><i class="fas fa-chalkboard-teacher"></i>
                             <span>Fasilitas</span></a></li>
                         @endcan

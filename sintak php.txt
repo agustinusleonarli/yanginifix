@@ -1,0 +1,17 @@
+PHP Artisan Sintaks
+
+composer dump-autoload
+
+php artisan migrate --seed
+php artisan migrate:fresh --seed
+
+Pertama Model Migration
+contoh : 
+php artisan make:model Tag -m
+
+Kedua Controller 
+php artisan make:controller Admin\\EventController
+
+ngecek permission
+{{ auth()->user()->getAllPermissions() }}
+
