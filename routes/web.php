@@ -65,6 +65,9 @@ Route::prefix('admin')->group(function () {
 
          //Fasilitas
          Route::resource('/sarana', App\Http\Controllers\Admin\SaranaController::class, ['except' => 'show' ,'as' => 'admin']);
+
+         // Penghargaan
+         Route::resource('/penghargaan', App\Http\Controllers\Admin\PenghargaanController::class, ['except' => 'show' ,'as' => 'admin']);
     });
 
 });

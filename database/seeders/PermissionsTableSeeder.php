@@ -92,5 +92,11 @@ class PermissionsTableSeeder extends Seeder
          Permission::create(['name' => 'saranas.create']);
          Permission::create(['name' => 'saranas.edit']);
          Permission::create(['name' => 'saranas.delete']);
+
+         //permission for penghargaan
+         Permission::create(['name' => 'penghargaans.index']);
+         Permission::create(['name' => 'penghargaans.create']);
+         Permission::create(['name' => 'penghargaans.edit']);
+         Permission::create(['name' => 'penghargaans.delete']);
     }
 }

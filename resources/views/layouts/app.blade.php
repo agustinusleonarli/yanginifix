@@ -91,23 +91,16 @@
                             <span>Fasilitas</span></a></li>
                         @endcan
                         @can('posts.index')
-                                <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.post.index') }}
+                                <li class="{{ setActive('admin/penghargaan') }}"><a class="nav-link" href="{{ route('admin.penghargaan.index') }}
                             "><i class="fas fa-book-open"></i>
                             <span>Penghargaan</span></a></li>
+                        @endcan
+                        @can('posts.index')
+                                <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.post.index') }}
+                            "><i class="fas fa-book-open"></i>
+                            <span>berita</span></a></li>
                         @endcan
                         
-                        @can('posts.index')
-                                <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.post.index') }}
-                            "><i class="fas fa-book-open"></i>
-                            <span>Berita</span></a></li>
-                        @endcan
-
-                        @can('posts.index')
-                                <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.post.index') }}
-                            "><i class="fas fa-book-open"></i>
-                            <span>Penghargaan</span></a></li>
-                        @endcan
-
                         @can('tags.index')
                             <li class="{{ setActive('admin/tag') }}"><a class="nav-link" href="{{ route('admin.tag.index') }}"><i class="fas fa-tags"></i> <span>Tags</span></a>
                             </li>
@@ -123,13 +116,9 @@
                             <li class="{{ setActive('admin/event') }}"><a class="nav-link" href="{{ route('admin.event.index') }}"><i class="fas fa-bell"></i>
                         <span>Agenda</span></a></li>
                         @endcan
-
-                        
-
                         @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index'))
                         <li class="menu-header">GALERI</li>
                         @endif
-                        
                         @can('photos.index')
                             <li class="{{ setActive('admin/photo') }}"><a class="nav-link"
                         href="{{ route('admin.photo.index') }}"><i class="fas fa-image"></i>
