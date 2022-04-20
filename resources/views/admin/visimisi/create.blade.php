@@ -4,14 +4,14 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Tambah Agenda</h1>
+                <h1>Visi Misi</h1>
             </div>
 
             <div class="section-body">
 
                 <div class="card">
                     <div class="card-header">
-                        <h4><i class="fas fa-bell"></i> Tambah Agenda</h4>
+                        <h4><i class="fas fa-bell"></i> Visi Misi </h4>
                     </div>
 
                     <div class="card-body">
