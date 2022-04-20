@@ -98,19 +98,19 @@
                         @can('posts.index')
                                 <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.post.index') }}
                             "><i class="fas fa-book-open"></i>
-                            <span>berita</span></a></li>
+                            <span>Berita</span></a></li>
                         @endcan
                         
-                        @can('tags.index')
+                        {{-- @can('tags.index')
                             <li class="{{ setActive('admin/tag') }}"><a class="nav-link" href="{{ route('admin.tag.index') }}"><i class="fas fa-tags"></i> <span>Tags</span></a>
                             </li>
-                        @endcan
+                        @endcan --}}
 
-                        @can('categories.index')
+                        {{-- @can('categories.index')
                             <li class="{{ setActive('admin/category') }}"><a class="nav-link" href="{{ route('admin.category.index') }}"><i class="fas fa-folder"></i>
                         <span>Kategori</span></a>
                         </li>
-                        @endcan
+                        @endcan --}}
 
                         @can('events.index')
                             <li class="{{ setActive('admin/event') }}"><a class="nav-link" href="{{ route('admin.event.index') }}"><i class="fas fa-bell"></i>
