@@ -20,7 +20,7 @@
 
                              <div class="form-group">
                                 <label>Nama Fasilitas</label>
-                                <input type="text" name="nama_sarana" value="{{ old('nama_sarana') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('nama_sarana') is-invalid @enderror">
+                                <input type="text" name="nama_sarana" value="{{ old('nama_sarana') }}" placeholder="Masukkan Nama Fasilitas" class="form-control @error('nama_sarana') is-invalid @enderror">
 
                                 @error('nama_sarana')
                                 <div class="invalid-feedback" style="display: block">
@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi Fasilitas</label>
-                                <input type="text" name="desc_sarana" value="{{ old('desc_sarana') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('desc_sarana') is-invalid @enderror">
+                                <input type="text" name="desc_sarana" value="{{ old('desc_sarana') }}" placeholder="Masukkan Deksripsi Fasilitas" class="form-control @error('desc_sarana') is-invalid @enderror">
 
                                 @error('desc_sarana')
                                 <div class="invalid-feedback" style="display: block">

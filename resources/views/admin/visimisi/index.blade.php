@@ -49,7 +49,7 @@
                                     <th scope="row" style="text-align: center">{{ ++$no + ($visimisis->currentPage()-1) * $visimisis->perPage() }}</th>
                                     <td>{{ $visimisi->katasambutan }}</td>
                                     <td>{{ $visimisi->visi }}</td>
-                                    <td>{{ $visimisi->misi }}</td>
+                                    <td>{!! $visimisi->misi !!}</td>
                                     <td class="text-center">
                                         @can('visimisis.edit')
                                             <a href="{{ route('admin.visimisi.edit', $visimisi->id) }}" class="btn btn-sm btn-primary">

@@ -20,7 +20,7 @@
 
                              <div class="form-group">
                                 <label>Nama Penghargaan</label>
-                                <input type="text" name="jdl_penghargaan" value="{{ old('jdl_penghargaan') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('jdl_penghargaan') is-invalid @enderror">
+                                <input type="text" name="jdl_penghargaan" value="{{ old('jdl_penghargaan') }}" placeholder="Masukkan Nama Penghargaan" class="form-control @error('jdl_penghargaan') is-invalid @enderror">
 
                                 @error('jdl_penghargaan')
                                 <div class="invalid-feedback" style="display: block">
@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi Penghargaan</label>
-                                <input type="text" name="desc_penghargaan" value="{{ old('desc_penghargaan') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('desc_penghargaan') is-invalid @enderror">
+                                <input type="text" name="desc_penghargaan" value="{{ old('desc_penghargaan') }}" placeholder="Masukkan Deskripsi Penghargaan" class="form-control @error('desc_penghargaan') is-invalid @enderror">
 
                                 @error('desc_penghargaan')
                                 <div class="invalid-feedback" style="display: block">

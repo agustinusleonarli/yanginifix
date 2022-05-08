@@ -19,7 +19,7 @@
                             @csrf
 
                              <div class="mb-3">
-                                <label>Kata Sambutan</label>
+                                <label>KATA SAMBUTAN</label>
                                 {{-- <input type="text" name="katasambutan" value="{{ old('katasambutan') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('katasambutan') is-invalid @enderror"> --}}
                                 <textarea class="form-control" rows="2" type="text" name="katasambutan" value="{{ old('katasambutan') }}" placeholder="Masukkan Kata Sambutan" class="form-control @error('katasambutan') is-invalid @enderror"></textarea>   
                                 @error('katasambutan')
@@ -29,19 +29,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Visi</label>
+                                <label>VISI</label>
                                 <input type="text" name="visi" value="{{ old('visi') }}" placeholder="Masukkan Visi" class="form-control @error('visi') is-invalid @enderror">
-
                                 @error('visi')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div> 
-                            <div class="form-group">
-                                <label>Misi</label>
-                                <input type="text" name="misi" value="{{ old('misi') }}" placeholder="Masukkan Misi" class="form-control @error('misi') is-invalid @enderror">
-
+                            <div class="mb-3">
+                                <label>MISI</label>
+                                {{-- <input type="text" name="misi" value="{{ old('misi') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('misi') is-invalid @enderror"> --}}
+                                <textarea class="form-control" rows="2" type="text" name="misi" value="{{ old('misi') }}" placeholder="Masukkan Kata Sambutan" class="form-control @error('misi') is-invalid @enderror"></textarea>   
                                 @error('misi')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}

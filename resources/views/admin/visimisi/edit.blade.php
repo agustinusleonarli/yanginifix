@@ -4,14 +4,14 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Edit Agenda</h1>
+                <h1>EDIT VISI MISI</h1>
             </div>
 
             <div class="section-body">
 
                 <div class="card">
                     <div class="card-header">
-                        <h4><i class="fas fa-bell"></i> Edit Agenda</h4>
+                        <h4><i class="fas fa-bell"></i> EDIT VISI MISI</h4>
                     </div>
 
                     <div class="card-body">
@@ -19,8 +19,8 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label>JUDUL AGENDA</label>
-                                <input type="text" name="katasambutan" value="{{ old('katasambutan', $visimisi->katasambutan) }}" placeholder="Masukkan Judul Agenda" class="form-control @error('katasambutan') is-invalid @enderror">
+                                <label>KATA SAMBUTAN</label>
+                                <input type="text" name="katasambutan" value="{{ old('katasambutan', $visimisi->katasambutan) }}" placeholder="Masukkan Kata Sambutan" class="form-control @error('katasambutan') is-invalid @enderror">
 
                                 @error('katasambutan')
                                 <div class="invalid-feedback" style="display: block">
@@ -32,8 +32,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>visi</label>
-                                        <input type="text" name="visi" value="{{ old('visi', $visimisi->visi) }}" placeholder="Masukkan Lokasi Agenda" class="form-control @error('visi') is-invalid @enderror">
+                                        <label>VISI</label>
+                                        <input type="text" name="visi" value="{{ old('visi', $visimisi->visi) }}" placeholder="Masukkan Visi " class="form-control @error('visi') is-invalid @enderror">
         
                                         @error('visi')
                                         <div class="invalid-feedback" style="display: block">
@@ -45,10 +45,10 @@
                                 
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                            <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Misi</label>
-                                        <input type="text" name="misi" value="{{ old('misi', $visimisi->misi) }}" placeholder="Masukkan Lokasi Agenda" class="form-control @error('misi') is-invalid @enderror">
+                                        <label>MISI</label>
+                                        <input type="text" name="misi" value="{{ old('misi', $visimisi->misi) }}" placeholder="Masukkan Visi" class="form-control @error('misi') is-invalid @enderror">
         
                                         @error('misi')
                                         <div class="invalid-feedback" style="display: block">
@@ -56,9 +56,7 @@
                                         </div>
                                         @enderror
                                     </div>
-                                </div>
-                                
-                            </div>
+
 
                             
 

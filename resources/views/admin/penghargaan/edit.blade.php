@@ -20,7 +20,7 @@
                             @method('PUT')
                             <div class="form-group">
                                 <label>Nama Penghargaan</label>
-                                <input type="text" name="jdl_penghargaan" value="{{ old('jdl_penghargaan', $penghargaan->jdl_penghargaan) }}" placeholder="Masukkan Judul Agenda" class="form-control @error('jdl_penghargaan') is-invalid @enderror">
+                                <input type="text" name="jdl_penghargaan" value="{{ old('jdl_penghargaan', $penghargaan->jdl_penghargaan) }}" placeholder="Masukkan Nama Penghargaan" class="form-control @error('jdl_penghargaan') is-invalid @enderror">
 
                                 @error('jdl_penghargaan')
                                 <div class="invalid-feedback" style="display: block">
@@ -33,7 +33,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Deskripsi Penghargaan</label>
-                                        <input type="text" name="desc_penghargaan" value="{{ old('desc_penghargaan', $penghargaan->desc_penghargaan) }}" placeholder="Masukkan Lokasi Agenda" class="form-control @error('desc_penghargaan') is-invalid @enderror">
+                                        <input type="text" name="desc_penghargaan" value="{{ old('desc_penghargaan', $penghargaan->desc_penghargaan) }}" placeholder="Masukkan Deksripsi Penghargaan" class="form-control @error('desc_penghargaan') is-invalid @enderror">
         
                                         @error('desc_penghargaan')
                                         <div class="invalid-feedback" style="display: block">

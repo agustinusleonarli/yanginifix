@@ -20,7 +20,7 @@
 
                              <div class="form-group">
                                 <label>Nama Dosen</label>
-                                <input type="text" name="dosen_nama" value="{{ old('dosen_nama') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('dosen_nama') is-invalid @enderror">
+                                <input type="text" name="dosen_nama" value="{{ old('dosen_nama') }}" placeholder="Masukkan Nama Dosen" class="form-control @error('dosen_nama') is-invalid @enderror">
 
                                 @error('dosen_nama')
                                 <div class="invalid-feedback" style="display: block">
@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Nomor Telepon</label>
-                                <input type="text" name="dosen_notelp" value="{{ old('dosen_notelp') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('dosen_notelp') is-invalid @enderror">
+                                <input type="text" name="dosen_notelp" value="{{ old('dosen_notelp') }}" placeholder="Masukkan Nomor Telepon" class="form-control @error('dosen_notelp') is-invalid @enderror">
 
                                 @error('dosen_notelp')
                                 <div class="invalid-feedback" style="display: block">
@@ -40,7 +40,7 @@
                             </div> 
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input type="text" name="dosen_alamat" value="{{ old('dosen_alamat') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('dosen_alamat') is-invalid @enderror">
+                                <input type="text" name="dosen_alamat" value="{{ old('dosen_alamat') }}" placeholder="Masukkan Alamat" class="form-control @error('dosen_alamat') is-invalid @enderror">
 
                                 @error('dosen_alamat')
                                 <div class="invalid-feedback" style="display: block">
@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi</label>
-                                <input type="text" name="dosen_deskripsi" value="{{ old('dosen_deskripsi') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('dosen_deskripsi') is-invalid @enderror">
+                                <input type="text" name="dosen_deskripsi" value="{{ old('dosen_deskripsi') }}" placeholder="Masukkan Deskripsi Dosen" class="form-control @error('dosen_deskripsi') is-invalid @enderror">
 
                                 @error('dosen_deskripsi')
                                 <div class="invalid-feedback" style="display: block">
