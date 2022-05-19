@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dosen extends Model
+class Prodi extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
 
-    public function prodi()
+    public function visimisis()
     {
-        return $this->belongsTo(Prodi::class);
+        return $this->hasMany(VisiMisi::class);
     }
-    
-    public function getImageAttribute($image)
+    public function dosens()
     {
-        return asset('storage/photos/' . $image);
+        return $this->hasMany(Dosen::class);
     }
-
 }

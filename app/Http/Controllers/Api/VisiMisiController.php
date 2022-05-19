@@ -25,15 +25,18 @@ class VisiMisiController extends Controller
      *
      * @return void
      */
-    public function DataSarana()
+    public function test($id)
     {
-        $saranas = Sarana::latest()->take(2)->get();
+        // $visimisis = VisiMisi::with('prodis')-> where('prodi_id') ->get();
+        // $visimisis= VisiMisi::findOrfail($id);
+        // $visimisis = VisiMisi::with('prodis')-> where('nama_prodi',$id) ->get();
+        // Visimisi::with('prodi') ->get()
+        
+        $visimisis=Visimisi::with('prodi')->where('prodi_id',$id) ->get();
         return response()->json([
-            "response" => [
-                "status"    => 200,
-                "message"   => "List Data Sarana"
-            ],
-            "data" => $saranas
+            'succes' => true,
+            'message' => "Data Prodi",
+            'data' => $visimisis
         ], 200);
     }
 }

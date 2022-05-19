@@ -15,4 +15,9 @@ class VisiMisi extends Model
      * @var array
      */
     protected $guarded = [];
+
+    public function prodi()
+    {
+        return $this->belongsTo(Prodi::class);
+    }
 }

@@ -98,5 +98,11 @@ class PermissionsTableSeeder extends Seeder
          Permission::create(['name' => 'penghargaans.create']);
          Permission::create(['name' => 'penghargaans.edit']);
          Permission::create(['name' => 'penghargaans.delete']);
+
+         //permission for prodi
+         Permission::create(['name' => 'prodis.index']);
+         Permission::create(['name' => 'prodis.create']);
+         Permission::create(['name' => 'prodis.edit']);
+         Permission::create(['name' => 'prodis.delete']);
     }
 }

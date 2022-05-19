@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\VisiMisi;
+use App\Models\Prodi;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -40,7 +41,8 @@ class VisiMisiController extends Controller
      */
     public function create()
     {
-        return view('admin.visimisi.create');
+        $prodis= Prodi::latest()->get();
+        return view('admin.visimisi.create', compact('prodis'));
     }
 
     /**
@@ -62,7 +64,8 @@ class VisiMisiController extends Controller
             'katasambutan' => $request->input('katasambutan'),
             'visi'   => $request->input('visi'),
             'misi'  => $request->input('misi'),
-            // dd($request->all())
+            'prodi_id' => $request->input('prodi_id'),
+        
             
         ]);
 
@@ -82,8 +85,10 @@ class VisiMisiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(VisiMisi $visimisi)
+
     {
-        return view('admin.visimisi.edit', compact('visimisi'));
+        $prodis = Prodi::latest()->get(); 
+        return view('admin.visimisi.edit', compact('visimisi', 'prodis'));
     }
 
     /**
@@ -99,6 +104,7 @@ class VisiMisiController extends Controller
             'katasambutan'     => 'required',
             'visi'   => 'required',
             'misi'  => 'required',
+            'prodi_id' => 'required'
             
         ]);
 
@@ -106,7 +112,8 @@ class VisiMisiController extends Controller
         $visimisi->update([
             'katasambutan'     => $request->input('katasambutan'),
             'visi'  => $request->input('visi'),
-            'misi'      => $request->input('misi')
+            'misi'      => $request->input('misi'),
+            'prodi_id' => $request->input('prodi_id')
         ]);
 
         if($visimisi){

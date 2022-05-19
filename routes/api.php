@@ -29,5 +29,6 @@ Route::get('/penghargaan', [App\Http\Controllers\Api\PenghargaanController::clas
 Route::get('/listdata/sarana', [App\Http\Controllers\Api\SaranaController::class, 'DataSarana']);
 //Visi Misi
 Route::get('/visimisi', [App\Http\Controllers\Api\VisiMisiController::class, 'index']);
+Route::get('/visiprodi/{id}', [App\Http\Controllers\Api\VisiMisiController::class, 'test']);
 // Kurikulum
 Route::get('/kurikulum', [App\Http\Controllers\Api\KurikulumController::class, 'index']);

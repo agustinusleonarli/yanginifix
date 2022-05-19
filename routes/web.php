@@ -68,6 +68,9 @@ Route::prefix('admin')->group(function () {
 
          // Penghargaan
          Route::resource('/penghargaan', App\Http\Controllers\Admin\PenghargaanController::class, ['except' => 'show' ,'as' => 'admin']);
+
+         // Prodi
+         Route::resource('/prodi', App\Http\Controllers\Admin\ProdiController::class, ['except' => 'show' ,'as' => 'admin']);
     });
 
 });

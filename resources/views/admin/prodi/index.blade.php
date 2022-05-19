@@ -4,23 +4,23 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>VISI MISI </h1>
+            <h1>PRODI </h1>
         </div>
 
         <div class="section-body">
 
             <div class="card">
                 <div class="card-header">
-                    <h4><i class="fas fa-bell"></i> Visi Misi</h4>
+                    <h4><i class="fas fa-bell"></i> PRODI </h4>
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.visimisi.index') }}" method="GET">
+                    <form action="{{ route('admin.prodi.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
-                                @can('visimisis.create')
+                                @can('prodis.create')
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.visimisi.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                        <a href="{{ route('admin.prodi.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
                                 {{-- <input type="text" class="form-control" name="q"
@@ -37,30 +37,24 @@
                             <thead>
                             <tr>
                                 <th scope="col" style="text-align: center;width: 6%">No</th>
-                                <th scope="col">Kata Sambutan</th>
-                                <th scope="col">Visi</th>
-                                <th scope="col">Misi</th>
-                                <th scope="col">Prodi</th>
+                                <th scope="col">NAMA PRODI</th>
                                 <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($visimisis as $no => $visimisi)
+                            @foreach ($prodis as $no => $prodi)
                                 <tr>
-                                    <th scope="row" style="text-align: center">{{ ++$no + ($visimisis->currentPage()-1) * $visimisis->perPage() }}</th>
-                                    <td>{{ $visimisi->katasambutan }}</td>
-                                    <td>{{ $visimisi->visi }}</td>
-                                    <td>{!! $visimisi->misi !!}</td>
-                                    <td>{{ $visimisi->prodi->nama_prodi }}</td>
+                                    <th scope="row" style="text-align: center">{{ ++$no + ($prodis->currentPage()-1) * $prodis->perPage() }}</th>
+                                    <td>{{ $prodi->nama_prodi }}</td> 
                                     <td class="text-center">
-                                        @can('visimisis.edit')
-                                            <a href="{{ route('admin.visimisi.edit', $visimisi->id) }}" class="btn btn-sm btn-primary">
+                                        @can('prodis.edit')
+                                            <a href="{{ route('admin.prodi.edit', $prodi->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
                                         @endcan
 
-                                        @can('visimisis.delete')
-                                            <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $visimisi->id }}">
+                                        @can('prodis.delete')
+                                            <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $prodi->id }}">
                                                 <i class="fa fa-trash"></i>
                                             </button>
                                         @endcan
@@ -70,7 +64,7 @@
                             </tbody>
                         </table>
                         <div style="text-align: center">
-                            {{$visimisis->links("vendor.pagination.bootstrap-4")}}
+                            {{$prodis->links("vendor.pagination.bootstrap-4")}}
                         </div>
                     </div>
                 </div>
@@ -101,7 +95,7 @@
 
                     //ajax delete
                     jQuery.ajax({
-                        url: "{{ route("admin.visimisi.index") }}/"+id,
+                        url: "{{ route("admin.prodi.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

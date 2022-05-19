@@ -75,6 +75,11 @@
                             "><i class="fas fa-clone"></i>
                             <span>Visi Misi</span></a></li>
                         @endcan
+                        @can('prodis.index')
+                                <li class="{{ setActive('admin/prodi') }}"><a class="nav-link" href="{{ route('admin.prodi.index') }}
+                            "><i class="fas fa-clone"></i>
+                            <span>Prodi</span></a></li>
+                        @endcan
                         @can('kurikulums.index')
                                 <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.kurikulum.index') }}
                             "><i class="fas fa-file-alt"></i>
@@ -95,11 +100,13 @@
                             "><i class="fas fa-book-open"></i>
                             <span>Penghargaan</span></a></li>
                         @endcan
+                        
                         @can('posts.index')
                                 <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.post.index') }}
                             "><i class="fas fa-book-open"></i>
                             <span>Berita</span></a></li>
                         @endcan
+                        
                         
                         {{-- @can('tags.index')
                             <li class="{{ setActive('admin/tag') }}"><a class="nav-link" href="{{ route('admin.tag.index') }}"><i class="fas fa-tags"></i> <span>Tags</span></a>
@@ -160,6 +167,7 @@
                                 href="{{ route('admin.user.index') }}"><i class="fas fa-users"></i> Users</a>
                                     </li>
                                 @endcan
+                                
                             </ul>
                         </li>
                     </ul>
