@@ -28,7 +28,7 @@ class SaranaController extends Controller
     public function index()
     {
         $saranas = Sarana::latest()->when(request()->q, function($saranas) {
-            $saranas = $saranas->where('title', 'like', '%'. request()->q . '%');
+            $saranas = $saranas->where('nama_sarana', 'like', '%'. request()->q . '%');
         })->paginate(10);
 
         return view('admin.sarana.index', compact('saranas'));
@@ -56,7 +56,6 @@ class SaranaController extends Controller
             'nama_sarana'     => 'required',
             'desc_sarana'   => 'required',
             'image'     => 'required|image',
-            
         ]);
 
                 //upload image

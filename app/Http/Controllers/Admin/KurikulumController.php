@@ -28,7 +28,7 @@ class KurikulumController extends Controller
     public function index()
     {
         $kurikulums = Kurikulum::latest()->when(request()->q, function($kurikulums) {
-            $kurikulums = $kurikulums->where('title', 'like', '%'. request()->q . '%');
+            $kurikulums = $kurikulums->where('nama_matkul', 'like', '%'. request()->q . '%');
         })->paginate(10);
 
         return view('admin.kurikulum.index', compact('kurikulums'));
