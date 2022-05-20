@@ -18,7 +18,7 @@ class CreateKurikulumsTable extends Migration
             $table->string('nama_matkul');
             $table->string('sem_matkul');
             $table->string('sks_matkul');
-            // $table->bigInteger('prodi_id')->unsigned();
+            $table->bigInteger('prodi_id')->unsigned();
             $table->timestamps();
         });
     }

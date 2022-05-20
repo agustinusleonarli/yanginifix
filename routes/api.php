@@ -20,9 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Dosen
 Route::get('/dosenprodi/{id}', [App\Http\Controllers\Api\DosenController::class, 'test']);
 Route::get('/dosen', [App\Http\Controllers\Api\DosenController::class, 'index']);
-
-
-
 //Fasilitas
 Route::get('/sarana', [App\Http\Controllers\Api\SaranaController::class, 'index']);
 Route::get('/listdata/sarana', [App\Http\Controllers\Api\SaranaController::class, 'DataSarana']);
@@ -33,4 +30,5 @@ Route::get('/listdata/sarana', [App\Http\Controllers\Api\SaranaController::class
 Route::get('/visimisi', [App\Http\Controllers\Api\VisiMisiController::class, 'index']);
 Route::get('/visiprodi/{id}', [App\Http\Controllers\Api\VisiMisiController::class, 'test']);
 // Kurikulum
+Route::get('/kurikulumprodi/{id}', [App\Http\Controllers\Api\KurikulumController::class, 'test']);
 Route::get('/kurikulum', [App\Http\Controllers\Api\KurikulumController::class, 'index']);

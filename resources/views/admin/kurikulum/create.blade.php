@@ -4,14 +4,14 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Tambah Kurikulum</h1>
+                <h1>TAMBAH MATA KULIAH</h1>
             </div>
 
             <div class="section-body">
 
                 <div class="card">
                     <div class="card-header">
-                        <h4><i class="fas fa-bell"></i> Tambah Kurikulum</h4>
+                        <h4><i class="fas fa-bell"></i> TAMBAH MATA KULIAH</h4>
                     </div>
 
                     <div class="card-body">
@@ -19,8 +19,8 @@
                             @csrf
 
                              <div class="form-group">
-                                <label>Nama Kurikulum</label>
-                                <input type="text" name="nama_matkul" value="{{ old('nama_matkul') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('nama_matkul') is-invalid @enderror">
+                                <label>Nama Mata Kuliah</label>
+                                <input type="text" name="nama_matkul" value="{{ old('nama_matkul') }}" placeholder="Masukkan Mata Kuliah" class="form-control @error('nama_matkul') is-invalid @enderror">
 
                                 @error('nama_matkul')
                                 <div class="invalid-feedback" style="display: block">
@@ -29,8 +29,8 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Semester Matkul</label>
-                                <input type="text" name="sem_matkul" value="{{ old('sem_matkul') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('sem_matkul') is-invalid @enderror">
+                                <label>Semester Mata Kuliah</label>
+                                <input type="text" name="sem_matkul" value="{{ old('sem_matkul') }}" placeholder="Masukkan Semester Mata Kuliah" class="form-control @error('sem_matkul') is-invalid @enderror">
 
                                 @error('sem_matkul')
                                 <div class="invalid-feedback" style="display: block">
@@ -39,8 +39,8 @@
                                 @enderror
                             </div> 
                             <div class="form-group">
-                                <label>SKS Matkul</label>
-                                <input type="text" name="sks_matkul" value="{{ old('sks_matkul') }}" placeholder="Masukkan Judul Agenda" class="form-control @error('sks_matkul') is-invalid @enderror">
+                                <label>SKS Mata Kuliah</label>
+                                <input type="text" name="sks_matkul" value="{{ old('sks_matkul') }}" placeholder="Masukkan SKS Mata Kuliah" class="form-control @error('sks_matkul') is-invalid @enderror">
 
                                 @error('sks_matkul')
                                 <div class="invalid-feedback" style="display: block">
@@ -48,6 +48,21 @@
                                 </div>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label>PRODI</label>
+                                <select class="form-control select-category @error('prodi_id') is-invalid @enderror" name="prodi_id">
+                                    <option value="">-- PILIH PRODI --</option>
+                                    @foreach ($prodis as $prodi)
+                                        <option value="{{ $prodi->id }}">{{ $prodi->nama_prodi }}</option>
+                                    @endforeach
+                                </select>
+                                @error('prodi_id')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
 
 
                             <button class="btn btn-primary mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> SIMPAN</button>

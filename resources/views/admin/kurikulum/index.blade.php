@@ -4,14 +4,14 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Kurikulum </h1>
+            <h1>MATA KULIAH </h1>
         </div>
 
         <div class="section-body">
 
             <div class="card">
                 <div class="card-header">
-                    <h4><i class="fas fa-bell"></i> Kurikulum </h4>
+                    <h4><i class="fas fa-bell"></i> MATA KULIAH </h4>
                 </div>
 
                 <div class="card-body">
@@ -41,6 +41,7 @@
                                 <th scope="col">Nama Matkul</th>
                                 <th scope="col">Semester Matkul </th>
                                 <th scope="col">SKS Matkul </th>
+                                <th scope="col">PRODI </th>
                                 <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                             </tr>
                             </thead>
@@ -51,6 +52,7 @@
                                     <td>{{ $kurikulum->nama_matkul }}</td>
                                     <td>{{ $kurikulum->sem_matkul }}</td>
                                     <td>{{ $kurikulum->sks_matkul }}</td>
+                                    <td>{{ $kurikulum->prodi->nama_prodi }}</td>
                                     <td class="text-center">
                                         @can('kurikulums.edit')
                                             <a href="{{ route('admin.kurikulum.edit', $kurikulum->id) }}" class="btn btn-sm btn-primary">

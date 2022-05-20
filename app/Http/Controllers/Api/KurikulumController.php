@@ -9,14 +9,24 @@ class KurikulumController extends Controller
 {
     public function index()
     {
-        // $saranas = Sarana::latest()->paginate(6);
-        $kurikulums = Kurikulum::latest()->get();
+        
+        $kurikulums= Kurikulum::latest()->get();
         return response()->json([
             "response" => [
                 "status"    => 200,
-                // "message"   => ""
+                "message"   => "List Data Kurikulum"
             ],
             "data" => $kurikulums
+        ], 200);
+    }
+
+    public function test($id)
+    {
+        $kurikulums= Kurikulum::with('prodi')->where('prodi_id',$id) ->get();
+        return response()->json([
+            'succes' => true,
+            'message' => "Data Kurikulum",
+            'data' => $kurikulums
         ], 200);
     }
 }

@@ -57,8 +57,25 @@
                                 
                             </div>
 
-                            
-
+                            <div class="form-group">
+                                <label>PRODI</label>
+                                <select class="form-control select-category @error('prodi_id') is-invalid @enderror"
+                                    name="prodi_id">
+                                    <option value="">-- PILIH PRODI --</option>
+                                    @foreach ($prodis as $prodi)
+                                        @if($kurikulum->prodi_id == $prodi->id)
+                                            <option value="{{ $prodi->id  }}" selected>{{ $prodi->nama_prodi }}</option>
+                                        @else
+                                            <option value="{{ $prodi->id  }}">{{ $prodi->nama_prodi }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @error('prodi_id')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
                             <button class="btn btn-primary mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> UPDATE</button>
                             <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i> RESET</button>
 
