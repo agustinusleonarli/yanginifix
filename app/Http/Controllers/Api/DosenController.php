@@ -9,7 +9,8 @@ class DosenController extends Controller
 {
     public function index()
     {
-        $dosens = Dosen::latest()->paginate(6);
+        // $dosens = Dosen::latest()->paginate(6);
+        $dosens= Dosen::latest()->get();
         return response()->json([
             "response" => [
                 "status"    => 200,
@@ -24,15 +25,13 @@ class DosenController extends Controller
      *
      * @return void
      */
-    public function DataDosen()
+    public function test($id)
     {
-        $dosens = Dosen::latest()->take(2)->get();
+        $dosens= Dosen::with('prodi')->where('prodi_id',$id) ->get();
         return response()->json([
-            "response" => [
-                "status"    => 200,
-                "message"   => "List Data Dosen"
-            ],
-            "data" => $dosens
+            'succes' => true,
+            'message' => "Data Prodi",
+            'data' => $dosens
         ], 200);
     }
 

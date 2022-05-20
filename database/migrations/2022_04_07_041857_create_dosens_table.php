@@ -20,6 +20,7 @@ class CreateDosensTable extends Migration
             $table->string('dosen_alamat');
             $table->string('dosen_deskripsi');
             $table->string('image');
+            $table->bigInteger('prodi_id')->unsigned();
             $table->timestamps();
         });
     }

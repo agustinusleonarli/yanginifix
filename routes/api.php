@@ -18,8 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 //Dosen
+Route::get('/dosenprodi/{id}', [App\Http\Controllers\Api\DosenController::class, 'test']);
 Route::get('/dosen', [App\Http\Controllers\Api\DosenController::class, 'index']);
-Route::get('/listdata/dosen', [App\Http\Controllers\Api\DosenController::class, 'DataDosen']);
+
+
 
 //Fasilitas
 Route::get('/sarana', [App\Http\Controllers\Api\SaranaController::class, 'index']);

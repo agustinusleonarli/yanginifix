@@ -42,6 +42,7 @@
                                 <th scope="col">Alamat Rumah </th>
                                 <th scope="col">Deskripsi </th>
                                 <th scope="col">Foto </th>
+                                <th scope="col">Prodi</th>
                                 <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                             </tr>
                             </thead>
@@ -54,6 +55,7 @@
                                     <td>{{ $dosen->dosen_alamat }}</td>
                                     <td>{{ $dosen->dosen_deskripsi }}</td>
                                     <td><img src="{{ $dosen->image }}" style="width: 120px"></td>
+                                    <td>{{ $dosen->prodi->nama_prodi}}</td>
                                     <td class="text-center">
                                         @can('dosens.edit')
                                             <a href="{{ route('admin.dosen.edit', $dosen->id) }}" class="btn btn-sm btn-primary">

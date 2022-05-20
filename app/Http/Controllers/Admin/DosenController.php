@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Dosen;
+use App\Models\Prodi;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -41,7 +42,8 @@ class DosenController extends Controller
      */
     public function create()
     {
-        return view('admin.dosen.create');
+        $prodis= Prodi::latest()->get();
+        return view('admin.dosen.create', compact('prodis'));
     }
 
     /**
@@ -58,6 +60,7 @@ class DosenController extends Controller
             'dosen_alamat'  => 'required',
             'dosen_deskripsi'  => 'required',
             'image'     => 'required|image',
+            'prodi_id' => 'required'
             
         ]);
 
@@ -71,6 +74,7 @@ class DosenController extends Controller
             'dosen_alamat'   => $request->input('dosen_alamat'),
             'dosen_deskripsi'  =>$request->input('dosen_deskripsi'),
             'image'     => $image->hashName(),
+            'prodi_id' => $request->input('prodi_id')
             // dd($request->all())
             
         ]);
@@ -92,7 +96,8 @@ class DosenController extends Controller
      */
     public function edit(Dosen $dosen)
     {
-        return view('admin.dosen.edit', compact('dosen'));
+        $prodis= Prodi::latest()->get();
+        return view('admin.dosen.edit', compact('dosen','prodis'));
     }
 
     /**
@@ -110,6 +115,7 @@ class DosenController extends Controller
             'dosen_alamat'  => 'required',
             'dosen_deskripsi'  => 'required',
             'image'     => 'required|image',
+            'prodi_id' => 'required'
             
         ]);
 
@@ -120,7 +126,8 @@ class DosenController extends Controller
                 'dosen_nama'       => $request->input('dosen_nama'),
                 'dosen_notelp' => $request->input('dosen_notelp'),
                 'dosen_alamat'     => $request->input('dosen_alamat'),  
-                'dosen_deskripsi'     => $request->input('dosen_deskripsi')  
+                'dosen_deskripsi'     => $request->input('dosen_deskripsi'),
+                'prodi_id' => $request->input('prodi_id')
             ]);
 
         } else {
@@ -138,7 +145,8 @@ class DosenController extends Controller
                 'dosen_nama'       => $request->input('dosen_nama'),
                 'dosen_notelp' => $request->input('dosen_notelp'),
                 'dosen_alamat'     => $request->input('dosen_alamat'),  
-                'dosen_deskripsi'     => $request->input('dosen_deskripsi')  
+                'dosen_deskripsi'     => $request->input('dosen_deskripsi'),
+                'prodi_id' => $request->input('prodi_id')
             ]);
 
         }

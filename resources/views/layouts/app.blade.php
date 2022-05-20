@@ -83,7 +83,7 @@
                         @can('kurikulums.index')
                                 <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.kurikulum.index') }}
                             "><i class="fas fa-file-alt"></i>
-                            <span>Kurikulum</span></a></li>
+                            <span>Mata Kuliah</span></a></li>
                         @endcan
                         @can('dosens.index')
                                 <li class="{{ setActive('admin/dosen') }}"><a class="nav-link" href="{{ route('admin.dosen.index') }}

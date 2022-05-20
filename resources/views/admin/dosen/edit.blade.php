@@ -77,6 +77,26 @@
                                 <label>GAMBAR</label>
                                 <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
                             </div>
+                            <div class="form-group">
+                                <label>Prodi</label>
+                                <select class="form-control select-category @error('prodi_id') is-invalid @enderror"
+                                    name="prodi_id">
+                                    <option value="">-- PILIH KATEGORI --</option>
+                                    @foreach ($prodis as $prodi)
+                                        @if($dosen->prodi_id == $prodi->id)
+                                            <option value="{{ $prodi->id  }}" selected>{{ $prodi->nama_prodi }}</option>
+                                        @else
+                                            <option value="{{ $prodi->id  }}">{{ $prodi->nama_prodi }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @error('prodi_id')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+    
 
                             
 
