@@ -29,21 +29,18 @@
                                 @enderror
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Semester Matkul</label>
-                                        <input type="text" name="sem_matkul" value="{{ old('sem_matkul', $kurikulum->set_matkul) }}" placeholder="Masukkan Lokasi Agenda" class="form-control @error('set_matkul') is-invalid @enderror">
-        
-                                        @error('set_matkul')
-                                        <div class="invalid-feedback" style="display: block">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
-                                    </div>
+                            <div class="form-group">
+                                <label>SEMESTER MATKUL </label>
+                                <input type="text" name="sem_matkul" value="{{ old('sem_matkul', $kurikulum->sem_matkul) }}" placeholder="Masukkan Judul Agenda" class="form-control @error('sem_matkul') is-invalid @enderror">
+
+                                @error('sem_matkul')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
                                 </div>
-                                
+                                @enderror
                             </div>
+                                
+                            
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">

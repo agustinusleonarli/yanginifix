@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.visimisi.index') }}" method="GET">
+                    <form action="{{ route('admin.kurikulum.index') }}" method="GET">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 @can('kurikulums.create')
@@ -23,12 +23,13 @@
                                         <a href="{{ route('admin.kurikulum.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
-                                {{-- <input type="text" class="form-control" name="q"
-                                       placeholder="cari berdasarkan judul agenda"> --}}
-                                {{-- <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> CARI
-                                    </button>
-                                </div> --}}
+                                <input type="text" class="form-control" name="q"
+                                placeholder="cari berdasarkan nama mata kuliah">
+                         <div class="input-group-append">
+                             <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> CARI
+                             </button>
+                         </div>
+
                             </div>
                         </div>
                     </form>
@@ -47,8 +48,8 @@
                             @foreach ($kurikulums as $no => $kurikulum)
                                 <tr>
                                     <th scope="row" style="text-align: center">{{ ++$no + ($kurikulums->currentPage()-1) * $kurikulums->perPage() }}</th>
-                                    <td>{{ $kurikulum->sem_matkul }}</td>
                                     <td>{{ $kurikulum->nama_matkul }}</td>
+                                    <td>{{ $kurikulum->sem_matkul }}</td>
                                     <td>{{ $kurikulum->sks_matkul }}</td>
                                     <td class="text-center">
                                         @can('kurikulums.edit')
@@ -84,7 +85,6 @@
         {
             var id = id;
             var token = $("meta[name='csrf-token']").attr("content");
-
             swal({
                 title: "APAKAH KAMU YAKIN ?",
                 text: "INGIN MENGHAPUS DATA INI!",
@@ -96,7 +96,6 @@
                 dangerMode: true,
             }).then(function(isConfirm) {
                 if (isConfirm) {
-
                     //ajax delete
                     jQuery.ajax({
                         url: "{{ route("admin.kurikulum.index") }}/"+id,
@@ -133,7 +132,6 @@
                             }
                         }
                     });
-
                 } else {
                     return true;
                 }

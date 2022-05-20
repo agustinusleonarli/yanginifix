@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Kurikulum;
-use App\Models\Prodi;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -41,8 +40,7 @@ class KurikulumController extends Controller
      */
     public function create()
     {
-        $prodis = Prodi::latest()->get();
-        return view('admin.kurikulum.create', compact('prodis'));
+        return view('admin.kurikulum.create');
     }
 
     /**
@@ -57,7 +55,7 @@ class KurikulumController extends Controller
             'sem_matkul'     => 'required',
             'nama_matkul'   => 'required',
             'sks_matkul'  => 'required',
-            'prodi_id' => 'required'
+            
             
         ]);
 
@@ -65,7 +63,7 @@ class KurikulumController extends Controller
             'sem_matkul' => $request->input('sem_matkul'),
             'nama_matkul'   => $request->input('nama_matkul'),
             'sks_matkul'  => $request->input('sks_matkul'),
-            'prodi_id' => $request->input('prodi_id')
+            
             // dd($request->all())
             
         ]);
@@ -87,8 +85,7 @@ class KurikulumController extends Controller
      */
     public function edit(Kurikulum $kurikulum)
     {
-        $prodis = Prodi::latest()->get();
-        return view('admin.kurikulum.edit', compact('kurikulum', 'prodis'));
+        return view('admin.kurikulum.edit', compact('kurikulum'));
     }
 
     /**
@@ -104,7 +101,7 @@ class KurikulumController extends Controller
             'sem_matkul'     => 'required',
             'nama_matkul'   => 'required',
             'sks_matkul'  => 'required',
-            'prodi_id' => 'required'
+            
             
         ]);
 
@@ -113,7 +110,7 @@ class KurikulumController extends Controller
             'sem_matkul'     => $request->input('sem_matkul'),
             'nama_matkul'  => $request->input('nama_matkul'),
             'sks_matkul'      => $request->input('sks_matkul'),
-            'prodi_id' => $request->input('prodi_id')
+            
         ]);
 
         if($kurikulum){
