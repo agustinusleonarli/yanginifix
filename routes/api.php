@@ -21,8 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/dosenprodi/{id}', [App\Http\Controllers\Api\DosenController::class, 'test']);
 Route::get('/dosen', [App\Http\Controllers\Api\DosenController::class, 'index']);
 //Fasilitas
+Route::get('/saranaprodi/{id}', [App\Http\Controllers\Api\SaranaController::class, 'test']);
 Route::get('/sarana', [App\Http\Controllers\Api\SaranaController::class, 'index']);
-Route::get('/listdata/sarana', [App\Http\Controllers\Api\SaranaController::class, 'DataSarana']);
+
 //Penghargaan
 Route::get('/penghargaan', [App\Http\Controllers\Api\PenghargaanController::class, 'index']);
 Route::get('/listdata/sarana', [App\Http\Controllers\Api\SaranaController::class, 'DataSarana']);

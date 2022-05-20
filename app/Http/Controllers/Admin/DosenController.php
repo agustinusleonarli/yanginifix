@@ -29,7 +29,7 @@ class DosenController extends Controller
     public function index()
     {
         $dosens = Dosen::latest()->when(request()->q, function($dosens) {
-            $dosens = $dosens->where('title', 'like', '%'. request()->q . '%');
+            $dosens = $dosens->where('dosen_nama', 'like', '%'. request()->q . '%');
         })->paginate(10);
 
         return view('admin.dosen.index', compact('dosens'));

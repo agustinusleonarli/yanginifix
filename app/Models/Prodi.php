@@ -23,5 +23,9 @@ class Prodi extends Model
     {
         return $this->hasMany(Kurikulum::class);
     }
+    public function saranas()
+    {
+        return $this->hasMany(Kurikulum::class);
+    }
     
 }

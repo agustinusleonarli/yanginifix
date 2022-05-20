@@ -25,15 +25,13 @@ class SaranaController extends Controller
      *
      * @return void
      */
-    public function DataSarana()
+    public function test($id)
     {
-        $saranas = Sarana::latest()->take(2)->get();
+        $saranas= Sarana::with('prodi')->where('prodi_id',$id) ->get();
         return response()->json([
-            "response" => [
-                "status"    => 200,
-                "message"   => "List Data Sarana"
-            ],
-            "data" => $saranas
+            'succes' => true,
+            'message' => "Data Sarana",
+            'data' => $saranas
         ], 200);
     }
 }

@@ -23,12 +23,12 @@
                                         <a href="{{ route('admin.dosen.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
                                 @endcan
-                                {{-- <input type="text" class="form-control" name="q"
-                                       placeholder="cari berdasarkan judul agenda"> --}}
-                                {{-- <div class="input-group-append">
+                                <input type="text" class="form-control" name="q"
+                                       placeholder="cari berdasarkan nama dosen"> 
+                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> CARI
                                     </button>
-                                </div> --}}
+                                </div> 
                             </div>
                         </div>
                     </form>
