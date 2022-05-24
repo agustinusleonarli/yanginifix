@@ -22,7 +22,8 @@ class KurikulumController extends Controller
 
     public function test($id)
     {
-        $kurikulums= Kurikulum::with('prodi')->where('prodi_id',$id) ->get();
+        $kurikulums= Kurikulum::with('prodi')->where('prodi_id',$id)->get()->groupBy('sem_matkul');
+        // $kurikulums= Kurikulum::with('prodi') ->where('prodi_id', $id) ->get() ->groupBy('sem_matkul');
         return response()->json([
             'succes' => true,
             'message' => "Data Kurikulum",

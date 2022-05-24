@@ -20,18 +20,6 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'posts.edit']);
         Permission::create(['name' => 'posts.delete']);
 
-        //permission for tags
-        Permission::create(['name' => 'tags.index']);
-        Permission::create(['name' => 'tags.create']);
-        Permission::create(['name' => 'tags.edit']);
-        Permission::create(['name' => 'tags.delete']);
-
-        //permission for categories
-        Permission::create(['name' => 'categories.index']);
-        Permission::create(['name' => 'categories.create']);
-        Permission::create(['name' => 'categories.edit']);
-        Permission::create(['name' => 'categories.delete']);
-
         //permission for events
         Permission::create(['name' => 'events.index']);
         Permission::create(['name' => 'events.create']);
