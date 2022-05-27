@@ -123,10 +123,10 @@
                             <li class="{{ setActive('admin/event') }}"><a class="nav-link" href="{{ route('admin.event.index') }}"><i class="fas fa-bell"></i>
                         <span>Agenda</span></a></li>
                         @endcan
-                        @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index'))
+                        {{-- @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index'))
                         <li class="menu-header">GALERI</li>
-                        @endif
-                        @can('photos.index')
+                        @endif --}}
+                        {{-- @can('photos.index')
                             <li class="{{ setActive('admin/photo') }}"><a class="nav-link"
                         href="{{ route('admin.photo.index') }}"><i class="fas fa-image"></i>
                         <span>Foto</span></a></li>
@@ -135,16 +135,16 @@
                         @can('videos.index')
                             <li class="{{ setActive('admin/video') }}"><a class="nav-link" href="{{ route('admin.video.index') }}"><i class="fas fa-video"></i>
                         <span>Video</span></a></li>
-                        @endcan
+                        @endcan --}}
 
                         @if(auth()->user()->can('roles.index') || auth()->user()->can('permission.index') || auth()->user()->can('users.index'))
                         <li class="menu-header">PENGATURAN</li>
                         @endif
                         
-                        @can('sliders.index')
+                        {{-- @can('sliders.index')
                             <li class="{{ setActive('admin/slider') }}"><a class="nav-link" href="{{ route('admin.slider.index') }}"><i class="fas fa-laptop"></i>
                         <span>Sliders</span></a></li>
-                        @endcan
+                        @endcan --}}
 
                         <li
                             class="dropdown {{ setActive('admin/role'). setActive('admin/permission'). setActive('admin/user') }}">
