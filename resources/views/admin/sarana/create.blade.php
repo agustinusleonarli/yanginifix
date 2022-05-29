@@ -48,20 +48,7 @@
                                 </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>Prodi</label>
-                                <select class="form-control select-category @error('prodi_id') is-invalid @enderror" name="prodi_id">
-                                    <option value="">-- PILIH KATEGORI --</option>
-                                    @foreach ($prodis as $prodi)
-                                        <option value="{{ $prodi->id }}">{{ $prodi->nama_prodi }}</option>
-                                    @endforeach
-                                </select>
-                                @error('prodi_id')
-                                <div class="invalid-feedback" style="display: block">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
+    
                             <button class="btn btn-primary mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> SIMPAN</button>
                             <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i> RESET</button>
 

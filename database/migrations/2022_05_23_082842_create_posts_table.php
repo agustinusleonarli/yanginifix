@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('nama_berita');
             $table->text('deskripsi_berita');
+            $table->string('image');
             $table->timestamps();
         });
     }

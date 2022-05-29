@@ -27,7 +27,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::latest()->when(request()->q, function($events) {
-            $events = $events->where('title', 'like', '%'. request()->q . '%');
+            $events = $events->where('nama_acara', 'like', '%'. request()->q . '%');
         })->paginate(10);
 
         return view('admin.event.index', compact('events'));
@@ -52,17 +52,16 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title'     => 'required',
-            'content'   => 'required',
-            'location'  => 'required',
+            'nama_acara'     => 'required',
+            'deskripsi_acara'   => 'required',
+            'lokasi_acara'  => 'required',
             'date'      => 'required'
         ]);
 
         $event = Event::create([
-            'title'     => $request->input('title'),
-            'slug'      => Str::slug($request->input('title'), '-'),
-            'content'   => $request->input('content'),
-            'location'  => $request->input('location'),
+            'nama_acara'     => $request->input('nama_acara'),
+            'deskripsi_acara'   => $request->input('deskripsi_acara'),
+            'lokasi_acara'  => $request->input('lokasi_acara'),
             'date'      => $request->input('date')
         ]);
 
@@ -96,18 +95,17 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         $this->validate($request, [
-            'title'     => 'required',
-            'content'   => 'required',
-            'location'  => 'required',
+            'nama_acara'     => 'required',
+            'deskripsi_acara'   => 'required',
+            'lokasi_acara'  => 'required',
             'date'      => 'required'
         ]);
 
         $event = Event::findOrFail($event->id);
         $event->update([
-            'title'     => $request->input('title'),
-            'slug'      => Str::slug($request->input('title'), '-'),
-            'content'   => $request->input('content'),
-            'location'  => $request->input('location'),
+            'nama_acara'     => $request->input('nama_acara'),
+            'deskripsi_acara'   => $request->input('deskripsi_acara'),
+            'lokasi_acara'  => $request->input('lokasi_acara'),
             'date'      => $request->input('date')
         ]);
 

@@ -4,14 +4,14 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Berita</h1>
+            <h1>Berita </h1>
         </div>
 
         <div class="section-body">
 
             <div class="card">
                 <div class="card-header">
-                    <h4><i class="fas fa-book-open"></i> Berita</h4>
+                    <h4><i class="fas fa-bell"></i> Berita </h4>
                 </div>
 
                 <div class="card-body">
@@ -24,11 +24,11 @@
                                     </div>
                                 @endcan
                                 <input type="text" class="form-control" name="q"
-                                       placeholder="cari berdasarkan judul berita">
-                                <div class="input-group-append">
+                                       placeholder="cari berdasarkan nama berita"> 
+                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> CARI
                                     </button>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </form>
@@ -36,9 +36,10 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th scope="col" style="text-align: center;width: 6%">NO.</th>
-                                <th scope="col">NAMA BERITA</th>
-                                <th scope="col">DEKSRIPSI BERITA</th>
+                                <th scope="col" style="text-align: center;width: 6%">No</th>
+                                <th scope="col">Nama Berita</th>
+                                <th scope="col">Deskripsi Berita </th>
+                                <th scope="col">Foto </th>
                                 <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                             </tr>
                             </thead>
@@ -48,6 +49,7 @@
                                     <th scope="row" style="text-align: center">{{ ++$no + ($posts->currentPage()-1) * $posts->perPage() }}</th>
                                     <td>{{ $post->nama_berita }}</td>
                                     <td>{{ $post->deskripsi_berita }}</td>
+                                    <td><img src="{{ $post->image }}" style="width: 120px"></td>
                                     <td class="text-center">
                                         @can('posts.edit')
                                             <a href="{{ route('admin.post.edit', $post->id) }}" class="btn btn-sm btn-primary">
@@ -95,10 +97,9 @@
             }).then(function(isConfirm) {
                 if (isConfirm) {
 
-
                     //ajax delete
                     jQuery.ajax({
-                        url: "/admin/post/"+id,
+                        url: "{{ route("admin.post.index") }}/"+id,
                         data:     {
                             "id": id,
                             "_token": token

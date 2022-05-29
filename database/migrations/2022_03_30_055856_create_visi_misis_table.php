@@ -15,9 +15,9 @@ class CreateVisiMisisTable extends Migration
     {
         Schema::create('visi_misis', function (Blueprint $table) {
             $table->id();
-            $table->text('katasambutan');
-            $table->text('visi');
-            $table->text('misi');
+            $table->string('katasambutan');
+            $table->string('visi');
+            $table->string('misi');
             $table->bigInteger('prodi_id')->unsigned();
             $table->timestamps();
         });

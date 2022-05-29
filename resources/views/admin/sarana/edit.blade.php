@@ -32,7 +32,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No Telp</label>
+                                        <label>Deskripsi Sarana</label>
                                         <input type="text" name="desc_sarana" value="{{ old('desc_sarana', $sarana->desc_sarana) }}" placeholder="Masukkan Lokasi Agenda" class="form-control @error('desc_sarana') is-invalid @enderror">
         
                                         @error('desc_sarana')
@@ -48,25 +48,7 @@
                                 <label>GAMBAR</label>
                                 <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
                             </div>
-                            <div class="form-group">
-                                <label>DOSEN</label>
-                                <select class="form-control select-category @error('prodi_id') is-invalid @enderror"
-                                    name="prodi_id">
-                                    <option value="">-- PILIH DOSEN --</option>
-                                    @foreach ($prodis as $prodi)
-                                        @if($sarana->prodi_id == $prodi->id)
-                                            <option value="{{ $prodi->id  }}" selected>{{ $prodi->nama_prodi }}</option>
-                                        @else
-                                            <option value="{{ $prodi->id  }}">{{ $prodi->nama_prodi }}</option>
-                                        @endif
-                                    @endforeach
-                                </select>
-                                @error('prodi_id')
-                                <div class="invalid-feedback" style="display: block">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
+                           
     
                             <button class="btn btn-primary mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> UPDATE</button>
                             <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i> RESET</button>

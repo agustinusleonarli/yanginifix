@@ -40,7 +40,7 @@
                                 <th scope="col">Nama Fasilitas</th>
                                 <th scope="col">Deksipsi</th>
                                 <th scope="col">Foto</th>
-                                <th scope="col">Ruangan</th>
+                                
                                 <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                             </tr>
                             </thead>
@@ -51,7 +51,7 @@
                                     <td>{{ $sarana->nama_sarana }}</td>
                                     <td>{{ $sarana->desc_sarana }}</td>
                                     <td><img src="{{ $sarana->image }}" style="width: 120px"></td>
-                                    <td>{{ $sarana->prodi->nama_prodi }}</td>
+                                   
                                     <td class="text-center">
                                         @can('saranas.edit')
                                             <a href="{{ route('admin.sarana.edit', $sarana->id) }}" class="btn btn-sm btn-primary">

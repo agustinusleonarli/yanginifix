@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Sarana;
-use App\Models\Prodi;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -42,8 +41,7 @@ class SaranaController extends Controller
      */
     public function create()
     {
-        $prodis= Prodi::latest()->get();
-        return view('admin.sarana.create',compact('prodis'));
+        return view('admin.sarana.create');
     }
 
     /**
@@ -58,7 +56,6 @@ class SaranaController extends Controller
             'nama_sarana'     => 'required',
             'desc_sarana'   => 'required',
             'image'     => 'required|image',
-            'prodi_id' => 'required'
         ]);
 
                 //upload image
@@ -69,7 +66,6 @@ class SaranaController extends Controller
             'nama_sarana' => $request->input('nama_sarana'),
             'desc_sarana'   => $request->input('desc_sarana'),
             'image'     => $image->hashName(),
-            'prodi_id' => $request->input('prodi_id')
             // dd($request->all())
             
         ]);
@@ -91,8 +87,8 @@ class SaranaController extends Controller
      */
     public function edit(Sarana $sarana)
     {
-        $prodis= Prodi::latest()->get();
-        return view('admin.sarana.edit', compact('sarana','prodis'));
+        
+        return view('admin.sarana.edit', compact('sarana'));
     }
 
     /**
@@ -108,7 +104,6 @@ class SaranaController extends Controller
             'nama_sarana'     => 'required',
             'desc_sarana'   => 'required',
             'image'     => 'required|image',
-            'prodi_id' => 'required'
         ]);
 
         if ($request->file('image') == "") {
@@ -117,7 +112,6 @@ class SaranaController extends Controller
             $sarana->update([
                 'nama_sarana'       => $request->input('nama_sarana'),
                 'desc_sarana' => $request->input('desc_sarana'),
-                'prodi_id' => $request->input('prodi_id')
             ]);
 
         } else {
@@ -134,7 +128,6 @@ class SaranaController extends Controller
                 'image'       => $image->hashName(),
                 'nama_sarana'       => $request->input('nama_sarana'),
                 'desc_sarana' => $request->input('desc_sarana'),
-                'prodi_id' => $request->input('prodi_id')
             ]);
 
         }

@@ -4,14 +4,14 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Edit Agenda</h1>
+                <h1>Edit Acara</h1>
             </div>
 
             <div class="section-body">
 
                 <div class="card">
                     <div class="card-header">
-                        <h4><i class="fas fa-bell"></i> Edit Agenda</h4>
+                        <h4><i class="fas fa-bell"></i> Edit Acara</h4>
                     </div>
 
                     <div class="card-body">
@@ -19,10 +19,20 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label>JUDUL AGENDA</label>
-                                <input type="text" name="title" value="{{ old('title', $event->title) }}" placeholder="Masukkan Judul Agenda" class="form-control @error('title') is-invalid @enderror">
+                                <label>NAMA ACARA</label>
+                                <input type="text" name="nama_acara" value="{{ old('nama_acara', $event->nama_acara) }}" placeholder="Masukkan Judul Acara" class="form-control @error('nama_acara') is-invalid @enderror">
 
-                                @error('title')
+                                @error('nama_acara')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>DESKRIPSI ACARA</label>
+                                <input type="text" name="deskripsi_acara" value="{{ old('deskripsi_acara', $event->deskripsi_acara) }}" placeholder="Masukkan Deskripsi Acara" class="form-control @error('deskripsi_acara') is-invalid @enderror">
+
+                                @error('deskripsi_acara')
                                 <div class="invalid-feedback" style="display: block">
                                     {{ $message }}
                                 </div>
@@ -33,9 +43,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>LOKASI</label>
-                                        <input type="text" name="location" value="{{ old('location', $event->location) }}" placeholder="Masukkan Lokasi Agenda" class="form-control @error('location') is-invalid @enderror">
+                                        <input type="text" name="lokasi_acara" value="{{ old('lokasi_acara', $event->lokasi_acara) }}" placeholder="Masukkan Lokasi Agenda" class="form-control @error('lokasi_acara') is-invalid @enderror">
         
-                                        @error('location')
+                                        @error('lokasi_acara')
                                         <div class="invalid-feedback" style="display: block">
                                             {{ $message }}
                                         </div>
@@ -56,15 +66,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label>ISI AGENDA</label>
-                                <textarea class="form-control content @error('content') is-invalid @enderror" name="content" placeholder="Masukkan Konten / Isi Agenda" rows="10">{!! old('content', $event->content) !!}</textarea>
-                                @error('content')
-                                <div class="invalid-feedback" style="display: block">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
+                    
 
                             <button class="btn btn-primary mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> UPDATE</button>
                             <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i> RESET</button>

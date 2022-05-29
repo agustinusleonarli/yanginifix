@@ -81,7 +81,7 @@
                             <span>Prodi</span></a></li>
                         @endcan
                         @can('kurikulums.index')
-                                <li class="{{ setActive('admin/post') }}"><a class="nav-link" href="{{ route('admin.kurikulum.index') }}
+                                <li class="{{ setActive('admin/kurikulum') }}"><a class="nav-link" href="{{ route('admin.kurikulum.index') }}
                             "><i class="fas fa-file-alt"></i>
                             <span>Mata Kuliah</span></a></li>
                         @endcan

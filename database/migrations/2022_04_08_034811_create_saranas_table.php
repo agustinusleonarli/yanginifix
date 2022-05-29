@@ -18,7 +18,6 @@ class CreateSaranasTable extends Migration
             $table->string('nama_sarana');
             $table->string('desc_sarana');
             $table->string('image');
-            $table->bigInteger('prodi_id')->unsigned();
             $table->timestamps();
         });
     }

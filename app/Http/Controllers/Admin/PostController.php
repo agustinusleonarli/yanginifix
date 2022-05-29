@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -40,6 +41,7 @@ class PostController extends Controller
      */
     public function create()
     {
+       
         return view('admin.post.create');
     }
 
@@ -51,20 +53,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'nama_berita' => 'required',
-            'deskripsi_berita' => 'required',
-            'image'         => 'required|image|mimes:jpeg,jpg,png|max:2000',
+        $this->validate($request, [
+            'nama_berita'     => 'required',
+            'deskripsi_berita'   => 'required',
+            'image'     => 'required|image',
         ]);
 
-        //upload image
-        $image = $request->file('image');
-        $image->storeAs('public/posts', $image->hashName());
-
+                //upload image
+                $image = $request->file('image');
+                $image->storeAs('public/post', $image->hashName());
+        
         $post = Post::create([
-            'nama_berita'       => $request->input('nama_berita'),
-            'deskripsi_berita'  => $request->input('deskripsi_berita'),
-            'image'       => $image->hashName(), 
+            'nama_berita' => $request->input('nama_berita'),
+            'deskripsi_berita'   => $request->input('deskripsi_berita'),
+            'image'     => $image->hashName(),
+            // dd($request->all())
+            
         ]);
 
         if($post){
@@ -74,7 +78,6 @@ class PostController extends Controller
             //redirect dengan pesan error
             return redirect()->route('admin.post.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
-
     }
 
     /**
@@ -85,7 +88,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-                return view('admin.post.edit', compact('post'));
+        return view('admin.post.edit', compact('post'));
     }
 
     /**
@@ -97,10 +100,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $this->validate($request,[
-            'nama_berita'         => 'required',
+        $this->validate($request, [
+            'nama_berita'     => 'required',
             'deskripsi_berita'   => 'required',
             'image'     => 'required|image',
+            
         ]);
 
         if ($request->file('image') == "") {
@@ -108,24 +112,24 @@ class PostController extends Controller
             $post = Post::findOrFail($post->id);
             $post->update([
                 'nama_berita'       => $request->input('nama_berita'),
-                'deskripsi_berita'     => $request->input('deskripsi_berita')  
+                'deskripsi_berita' => $request->input('deskripsi_berita'),
+                
             ]);
 
         } else {
 
             //remove old image
-            Storage::disk('local')->delete('public/posts/'.$post->image);
+            Storage::disk('local')->delete('public/post/'.$post->image);
 
             //upload new image
             $image = $request->file('image');
-            $image->storeAs('public/posts', $image->hashName());
+            $image->storeAs('public/post', $image->hashName());
 
             $post = Post::findOrFail($post->id);
             $post->update([
-                
-                'nama_berita'       => $request->input('nama_berita'),
-                'deskripsi_berita'     => $request->input('deskripsi_berita') ,
                 'image'       => $image->hashName(),
+                'nama_berita'       => $request->input('nama_berita'),
+                'deskripsi_berita' => $request->input('deskripsi_berita'),
             ]);
 
         }
@@ -148,7 +152,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
-        // $image = Storage::disk('local')->delete('public/posts/'.basename($post->image)
         $post->delete();
 
         if($post){

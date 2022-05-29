@@ -4,14 +4,14 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Agenda</h1>
+            <h1>Acara</h1>
         </div>
 
         <div class="section-body">
 
             <div class="card">
                 <div class="card-header">
-                    <h4><i class="fas fa-bell"></i> Agenda</h4>
+                    <h4><i class="fas fa-bell"></i> Acara</h4>
                 </div>
 
                 <div class="card-body">
@@ -24,7 +24,7 @@
                                     </div>
                                 @endcan
                                 <input type="text" class="form-control" name="q"
-                                       placeholder="cari berdasarkan judul agenda">
+                                       placeholder="cari berdasarkan judul acara">
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> CARI
                                     </button>
@@ -37,9 +37,10 @@
                             <thead>
                             <tr>
                                 <th scope="col" style="text-align: center;width: 6%">NO.</th>
-                                <th scope="col">JUDUL AGENDA</th>
-                                <th scope="col">LOKASI</th>
-                                <th scope="col">TANGGAL</th>
+                                <th scope="col">NAMA ACARA</th>
+                                <th scope="col">DEKSRIPSI ACARA</th>
+                                <th scope="col">LOKASI ACARA</th>
+                                <th scope="col">TANGGAL</th>    
                                 <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                             </tr>
                             </thead>
@@ -47,9 +48,11 @@
                             @foreach ($events as $no => $event)
                                 <tr>
                                     <th scope="row" style="text-align: center">{{ ++$no + ($events->currentPage()-1) * $events->perPage() }}</th>
-                                    <td>{{ $event->title }}</td>
-                                    <td>{{ $event->location }}</td>
+                                    <td>{{ $event->nama_acara }}</td>
+                                    <td>{{ $event->deskripsi_acara }}</td>
+                                    <td>{{ $event->lokasi_acara  }}</td>
                                     <td>{{ $event->date }}</td>
+                                    
                                     <td class="text-center">
                                         @can('events.edit')
                                             <a href="{{ route('admin.event.edit', $event->id) }}" class="btn btn-sm btn-primary">
