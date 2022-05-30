@@ -21,12 +21,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/dosenprodi/{id}', [App\Http\Controllers\Api\DosenController::class, 'test']);
 Route::get('/dosen', [App\Http\Controllers\Api\DosenController::class, 'index']);
 //Fasilitas
-Route::get('/saranaprodi/{id}', [App\Http\Controllers\Api\SaranaController::class, 'test']);
 Route::get('/sarana', [App\Http\Controllers\Api\SaranaController::class, 'index']);
-
+//Berita
+Route::get('/berita', [App\Http\Controllers\Api\PostController::class, 'index']);
 //Penghargaan
 Route::get('/penghargaan', [App\Http\Controllers\Api\PenghargaanController::class, 'index']);
-Route::get('/listdata/sarana', [App\Http\Controllers\Api\SaranaController::class, 'DataSarana']);
+//Acara
+Route::get('/acara', [App\Http\Controllers\Api\EventController::class, 'index']);
 //Visi Misi
 Route::get('/visimisi', [App\Http\Controllers\Api\VisiMisiController::class, 'index']);
 Route::get('/visiprodi/{id}', [App\Http\Controllers\Api\VisiMisiController::class, 'test']);

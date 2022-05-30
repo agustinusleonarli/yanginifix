@@ -16,7 +16,7 @@ class CreatePenghargaansTable extends Migration
         Schema::create('penghargaans', function (Blueprint $table) {
             $table->id();
             $table->string('jdl_penghargaan');
-            $table->string('desc_penghargaan');
+            $table->longText('desc_penghargaan');
             $table->string('image');
             $table->date('tgl_penghargaan');
             $table->timestamps();

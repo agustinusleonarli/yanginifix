@@ -20,7 +20,7 @@
                             @method('PUT')
                             <div class="form-group">
                                 <label>Nama Berita</label>
-                                <input type="text" name="nama_berita" value="{{ old('nama_berita', $post->nama_berita) }}" placeholder="Masukkan Nama Dosen" class="form-control @error('nama_berita') is-invalid @enderror">
+                                <input type="text" name="nama_berita" value="{{ old('nama_berita', $post->nama_berita) }}" placeholder="Masukkan Nama Berita" class="form-control @error('nama_berita') is-invalid @enderror">
 
                                 @error('nama_berita')
                                 <div class="invalid-feedback" style="display: block">
@@ -33,7 +33,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Deskripsi Berita</label>
-                                        <input type="text" name="deskripsi_berita" value="{{ old('deskripsi_berita', $post->deskripsi_berita) }}" placeholder="Masukkan No Telepon" class="form-control @error('deskripsi_berita') is-invalid @enderror">
+                                        <input type="text" name="deskripsi_berita" value="{{ old('deskripsi_berita', $post->deskripsi_berita) }}" placeholder="Masukkan Deksripsi Berita" class="form-control @error('deskripsi_berita') is-invalid @enderror">
         
                                         @error('deskripsi_berita')
                                         <div class="invalid-feedback" style="display: block">

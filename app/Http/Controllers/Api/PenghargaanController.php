@@ -14,7 +14,7 @@ class PenghargaanController extends Controller
         return response()->json([
             "response" => [
                 "status"    => 200,
-                // "message"   => "List Data Dosen"
+               
             ],
             "data" => $penghargaans
         ], 200);
